@@ -1,0 +1,14 @@
+node_modules
+.next
+.env
+.env.local
+*.log
+.DS_Store
+.vercel
+prisma/dev.db
+dist
+build
+coverage
+.vscode
+*.swp
+*.swo

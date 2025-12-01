@@ -1,0 +1,147 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tenants   UserTenant[]
+}
+
+model Tenant {
+  id                String   @id @default(cuid())
+  name              String
+  shopifyDomain     String   @unique
+  shopifyAccessToken String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  users             UserTenant[]
+  customers         Customer[]
+  orders            Order[]
+  products          Product[]
+  customEvents      CustomEvent[]
+}
+
+model UserTenant {
+  id        String   @id @default(cuid())
+  userId    String
+  tenantId  String
+  role      String   @default("viewer") // admin, viewer
+  createdAt DateTime @default(now())
+  
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, tenantId])
+  @@index([userId])
+  @@index([tenantId])
+}
+
+model Customer {
+  id                String   @id @default(cuid())
+  tenantId          String
+  shopifyCustomerId String
+  email             String?
+  firstName         String?
+  lastName          String?
+  phone             String?
+  totalSpent        Float    @default(0)
+  ordersCount       Int      @default(0)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  tenant            Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  orders            Order[]
+  customEvents      CustomEvent[]
+  
+  @@unique([tenantId, shopifyCustomerId])
+  @@index([tenantId])
+  @@index([email])
+}
+
+model Product {
+  id              String   @id @default(cuid())
+  tenantId        String
+  shopifyProductId String
+  title           String
+  description     String?
+  vendor          String?
+  productType     String?
+  price           Float?
+  inventory       Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  tenant          Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  orderItems      OrderItem[]
+  
+  @@unique([tenantId, shopifyProductId])
+  @@index([tenantId])
+}
+
+model Order {
+  id              String   @id @default(cuid())
+  tenantId        String
+  shopifyOrderId  String
+  customerId      String?
+  email           String?
+  totalPrice      Float
+  subtotalPrice   Float?
+  totalTax        Float?
+  currency        String   @default("USD")
+  financialStatus String?  // paid, pending, refunded
+  fulfillmentStatus String? // fulfilled, unfulfilled, partial
+  orderNumber     Int?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  tenant          Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  customer        Customer? @relation(fields: [customerId], references: [id], onDelete: SetNull)
+  items           OrderItem[]
+  
+  @@unique([tenantId, shopifyOrderId])
+  @@index([tenantId])
+  @@index([customerId])
+  @@index([createdAt])
+}
+
+model OrderItem {
+  id        String   @id @default(cuid())
+  orderId   String
+  productId String?
+  title     String
+  quantity  Int
+  price     Float
+  
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product   Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  
+  @@index([orderId])
+}
+
+model CustomEvent {
+  id         String   @id @default(cuid())
+  tenantId   String
+  customerId String?
+  eventType  String   // cart_abandoned, checkout_started, product_viewed
+  eventData  String?  // JSON string for additional data
+  createdAt  DateTime @default(now())
+  
+  tenant     Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  customer   Customer? @relation(fields: [customerId], references: [id], onDelete: SetNull)
+  
+  @@index([tenantId])
+  @@index([customerId])
+  @@index([eventType])
+  @@index([createdAt])
+}
