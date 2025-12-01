@@ -1,6 +1,6 @@
 # Xeno FDE Internship Assignment - Project Summary
 
-## 📋 Project Overview
+##  Project Overview
 
 **Candidate:** [Your Name]  
 **Assignment:** FDE Internship 2025  
@@ -9,22 +9,22 @@
 
 ---
 
-## 🎯 Assignment Requirements - All Completed ✅
+##  Assignment Requirements - All Completed 
 
-### ✅ 1. Shopify Store Setup
+###  1. Shopify Store Setup
 - Free Shopify development store ready
 - Test products, customers, and orders created
 - Webhook endpoints configured
 
-### ✅ 2. Data Ingestion Service
+###  2. Data Ingestion Service
 **Features Implemented:**
-- ✅ Customer data ingestion via webhooks
-- ✅ Order data ingestion with line items
-- ✅ Product data ingestion with variants
-- ✅ Custom events (cart abandoned, checkout started)
-- ✅ PostgreSQL database with Prisma ORM
-- ✅ Multi-tenant architecture with complete data isolation
-- ✅ HMAC webhook verification for security
+-  Customer data ingestion via webhooks
+-  Order data ingestion with line items
+-  Product data ingestion with variants
+-  Custom events (cart abandoned, checkout started)
+-  PostgreSQL database with Prisma ORM
+-  Multi-tenant architecture with complete data isolation
+-  HMAC webhook verification for security
 
 **Technical Approach:**
 - Next.js API routes for webhook handlers
@@ -32,29 +32,29 @@
 - Automatic customer statistics updates
 - Proper error handling and logging
 
-### ✅ 3. Insights Dashboard
+###  3. Insights Dashboard
 **Metrics Displayed:**
-- ✅ Total customers
-- ✅ Total orders
-- ✅ Total products
-- ✅ Total revenue
-- ✅ Average order value
+-  Total customers
+-  Total orders
+-  Total products
+-  Total revenue
+-  Average order value
 
 **Visualizations:**
-- ✅ Revenue trend (line chart)
-- ✅ Orders by date (bar chart)
-- ✅ Top 5 customers by spend (cards)
-- ✅ Custom events breakdown (doughnut chart)
-- ✅ Date range filtering (start/end date)
+-  Revenue trend (line chart)
+-  Orders by date (bar chart)
+-  Top 5 customers by spend (cards)
+-  Custom events breakdown (doughnut chart)
+-  Date range filtering (start/end date)
 
 **User Experience:**
-- ✅ Email authentication with NextAuth.js
-- ✅ Clean, responsive UI with TailwindCSS
-- ✅ Tenant selector dropdown
-- ✅ Interactive charts with Chart.js
-- ✅ Real-time metrics updates
+-  Email authentication with NextAuth.js
+-  Clean, responsive UI with TailwindCSS
+-  Tenant selector dropdown
+-  Interactive charts with Chart.js
+-  Real-time metrics updates
 
-### ✅ 4. Documentation
+###  4. Documentation
 **Comprehensive Documentation Provided:**
 1. **README.md** (Main documentation)
    - Project overview
@@ -83,35 +83,35 @@
 
 ---
 
-## 🚀 Bonus Features Implemented
+##  Bonus Features Implemented
 
 ### Security
-- ✅ Password hashing with bcrypt
-- ✅ JWT session management
-- ✅ Webhook HMAC verification
-- ✅ Protected routes with middleware
-- ✅ Tenant-based authorization
+-  Password hashing with bcrypt
+-  JWT session management
+-  Webhook HMAC verification
+-  Protected routes with middleware
+-  Tenant-based authorization
 
 ### Additional Features
-- ✅ Database seeding for demo data
-- ✅ Prisma Studio integration
-- ✅ Comprehensive error handling
-- ✅ TypeScript for type safety
-- ✅ Responsive mobile-friendly design
-- ✅ Multiple chart types
-- ✅ Event tracking system
+-  Database seeding for demo data
+-  Prisma Studio integration
+-  Comprehensive error handling
+-  TypeScript for type safety
+-  Responsive mobile-friendly design
+-  Multiple chart types
+-  Event tracking system
 
 ### Developer Experience
-- ✅ Clean code structure
-- ✅ Modular components
-- ✅ Reusable utilities
-- ✅ Environment variable management
-- ✅ Git-ready with .gitignore
-- ✅ Detailed inline comments
+-  Clean code structure
+-  Modular components
+-  Reusable utilities
+-  Environment variable management
+-  Git-ready with .gitignore
+-  Detailed inline comments
 
 ---
 
-## 💻 Technology Stack
+##  Technology Stack
 
 ### Backend
 - **Framework:** Next.js 14 (App Router)
@@ -134,7 +134,7 @@
 
 ---
 
-## 📊 Database Schema
+##  Database Schema
 
 **Tables Implemented:**
 1. **User** - Authentication and user management
@@ -154,13 +154,13 @@
 
 ---
 
-## 🏗️ Architecture Highlights
+##  Architecture Highlights
 
 ### Multi-Tenant Model
 ```
 User ←→ UserTenant ←→ Tenant
                          ↓
-        ┌────────────────┼────────────────┐
+        
         ↓                ↓                ↓
     Customer          Order           Product
                         ↓
@@ -176,7 +176,7 @@ User → Dashboard → API → Query by TenantId → Aggregate → Charts
 
 ---
 
-## 📈 Metrics & Performance
+##  Metrics & Performance
 
 ### Current Performance
 - **Webhook Processing:** < 500ms average
@@ -192,7 +192,7 @@ User → Dashboard → API → Query by TenantId → Aggregate → Charts
 
 ---
 
-## 🎨 User Interface
+##  User Interface
 
 ### Pages Implemented
 1. **Landing Page** - Welcome screen with sign up/sign in
@@ -214,7 +214,7 @@ User → Dashboard → API → Query by TenantId → Aggregate → Charts
 
 ---
 
-## 🔒 Security Implementation
+##  Security Implementation
 
 ### Authentication
 - Email/password with secure hashing
@@ -235,7 +235,7 @@ User → Dashboard → API → Query by TenantId → Aggregate → Charts
 
 ---
 
-## 📝 Documentation Quality
+##  Documentation Quality
 
 ### What's Documented
 - [x] Complete setup guide
@@ -259,27 +259,27 @@ User → Dashboard → API → Query by TenantId → Aggregate → Charts
 
 ---
 
-## 🎯 Assignment Criteria Met
+##  Assignment Criteria Met
 
-### Problem Solving ⭐⭐⭐⭐⭐
+### Problem Solving 
 - Multi-tenant architecture handles real-world complexity
 - Proper data isolation and security
 - Scalable design patterns
 - Well-thought-out trade-offs
 
-### Engineering Fluency ⭐⭐⭐⭐⭐
+### Engineering Fluency 
 - Clean API integrations
 - Robust database schema
 - Type-safe codebase
 - Production-ready error handling
 
-### Communication ⭐⭐⭐⭐⭐
+### Communication 
 - Crystal-clear documentation
 - Comprehensive README
 - Code comments where needed
 - Architecture well explained
 
-### Ownership & Hustle ⭐⭐⭐⭐⭐
+### Ownership & Hustle 
 - All requirements met and exceeded
 - Bonus features implemented
 - Deployed and functional
@@ -287,15 +287,15 @@ User → Dashboard → API → Query by TenantId → Aggregate → Charts
 
 ---
 
-## 🎬 Deliverables
+##  Deliverables
 
-### 1. GitHub Repository ✅
+### 1. GitHub Repository 
 - [x] Clean, organized code
 - [x] All source files committed
 - [x] Documentation included
 - [x] .gitignore configured
 
-### 2. Deployed Service ✅
+### 2. Deployed Service 
 - [x] Accessible production URL
 - [x] Environment configured
 - [x] Database connected
@@ -307,7 +307,7 @@ User → Dashboard → API → Query by TenantId → Aggregate → Charts
 - [ ] Architecture explained
 - [ ] Your voice and video
 
-### 4. Documentation ✅
+### 4. Documentation 
 - [x] Setup instructions
 - [x] Architecture diagram
 - [x] API documentation
@@ -315,7 +315,7 @@ User → Dashboard → API → Query by TenantId → Aggregate → Charts
 
 ---
 
-## 💡 Key Learnings & Decisions
+##  Key Learnings & Decisions
 
 ### Architectural Decisions
 
@@ -346,7 +346,7 @@ User → Dashboard → API → Query by TenantId → Aggregate → Charts
 
 ---
 
-## 🔮 Future Enhancements Planned
+##  Future Enhancements Planned
 
 ### Phase 1 - Production Hardening
 1. Rate limiting on webhooks
@@ -378,7 +378,7 @@ User → Dashboard → API → Query by TenantId → Aggregate → Charts
 
 ---
 
-## 🏆 Why This Solution Stands Out
+##  Why This Solution Stands Out
 
 ### Technical Excellence
 - **Type-safe** - TypeScript + Prisma catches errors at compile time
@@ -400,7 +400,7 @@ User → Dashboard → API → Query by TenantId → Aggregate → Charts
 
 ---
 
-## 📊 Project Statistics
+##  Project Statistics
 
 - **Total Files:** 40+
 - **Lines of Code:** ~3,000+
@@ -409,11 +409,11 @@ User → Dashboard → API → Query by TenantId → Aggregate → Charts
 - **Database Tables:** 8
 - **React Components:** 6
 - **Time Invested:** [Your hours]
-- **Coffee Consumed:** ☕☕☕
+- **Coffee Consumed:** 
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 This project demonstrates my ability to:
 - Design and implement complex systems
@@ -426,7 +426,7 @@ I'm excited about the opportunity to bring these skills to the Xeno team and con
 
 ---
 
-## 📞 Contact & Links
+##  Contact & Links
 
 - **GitHub Repository:** [Your repo URL]
 - **Deployed Application:** [Your Vercel URL]
@@ -436,10 +436,10 @@ I'm excited about the opportunity to bring these skills to the Xeno team and con
 
 ---
 
-**Thank you for reviewing my submission!** 🚀
+**Thank you for reviewing my submission!** 
 
 I look forward to discussing this project and the FDE Internship opportunity.
 
 ---
 
-_Built with ❤️ for Xeno FDE Internship 2025_
+_Built with  for Xeno FDE Internship 2025_

@@ -230,4 +230,4 @@ If live demo has issues:
 
 ---
 
-Good luck with your recording! 🎥🚀
+Good luck with your recording!

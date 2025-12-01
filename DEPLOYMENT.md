@@ -270,7 +270,7 @@ npm run db:seed
 ## Cost Estimation
 
 ### Vercel (Free Tier)
-- ✅ Free for hobby projects
+- Free for hobby projects
 - Limitations: 100GB bandwidth, 100GB-hours compute
 
 ### Database

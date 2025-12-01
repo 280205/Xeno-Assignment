@@ -5,49 +5,49 @@
 ### Three-Tier Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                         Presentation Layer                      │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │  React Components (Client-Side)                          │  │
-│  │  - Authentication Pages (Sign In/Sign Up)                │  │
-│  │  - Dashboard with Charts                                 │  │
-│  │  - Tenant Management UI                                  │  │
-│  │  - Date Range Filters                                    │  │
-│  └──────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────┘
+
+                         Presentation Layer                      
+    
+    React Components (Client-Side)                            
+    - Authentication Pages (Sign In/Sign Up)                  
+    - Dashboard with Charts                                   
+    - Tenant Management UI                                    
+    - Date Range Filters                                      
+    
+
                               ↕ HTTPS
-┌─────────────────────────────────────────────────────────────────┐
-│                        Application Layer                        │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │  Next.js API Routes (Server-Side)                        │  │
-│  │  ┌────────────────────────────────────────────────────┐  │  │
-│  │  │  Webhook Handlers                                  │  │  │
-│  │  │  - Customer sync  - Order sync  - Product sync     │  │  │
-│  │  └────────────────────────────────────────────────────┘  │  │
-│  │  ┌────────────────────────────────────────────────────┐  │  │
-│  │  │  Business Logic                                    │  │  │
-│  │  │  - Metrics calculation  - Data aggregation         │  │  │
-│  │  │  - Tenant isolation    - HMAC verification         │  │  │
-│  │  └────────────────────────────────────────────────────┘  │  │
-│  │  ┌────────────────────────────────────────────────────┐  │  │
-│  │  │  Authentication (NextAuth.js)                      │  │  │
-│  │  │  - JWT session management  - Password hashing      │  │  │
-│  │  └────────────────────────────────────────────────────┘  │  │
-│  └──────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────┘
+
+                        Application Layer                        
+    
+    Next.js API Routes (Server-Side)                          
+        
+      Webhook Handlers                                      
+      - Customer sync  - Order sync  - Product sync         
+        
+        
+      Business Logic                                        
+      - Metrics calculation  - Data aggregation             
+      - Tenant isolation    - HMAC verification             
+        
+        
+      Authentication (NextAuth.js)                          
+      - JWT session management  - Password hashing          
+        
+    
+
                               ↕ SQL
-┌─────────────────────────────────────────────────────────────────┐
-│                          Data Layer                             │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │  Prisma ORM (Query Builder & Migration)                 │  │
-│  └──────────────────────────────────────────────────────────┘  │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │  PostgreSQL Database                                     │  │
-│  │  - Users & Authentication                                │  │
-│  │  - Multi-Tenant Data (Customers, Orders, Products)      │  │
-│  │  - Analytics & Events                                    │  │
-│  └──────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────┘
+
+                          Data Layer                             
+    
+    Prisma ORM (Query Builder & Migration)                   
+    
+    
+    PostgreSQL Database                                       
+    - Users & Authentication                                  
+    - Multi-Tenant Data (Customers, Orders, Products)        
+    - Analytics & Events                                      
+    
+
 ```
 
 ## Multi-Tenancy Model
@@ -80,26 +80,26 @@ SELECT * FROM "Order" WHERE "tenantId" = 'tenant_123';
 ### Entity Relationship Diagram
 
 ```
-┌─────────────┐         ┌──────────────┐
-│    User     │────┬───│  UserTenant  │
-└─────────────┘    │    └──────────────┘
-                   │             │
-                   │             │
-                   │    ┌────────▼───────┐
-                   │    │     Tenant     │
-                   │    └────────┬───────┘
-                   │             │
-              ┌────┴─────┬───────┼────────┬────────────┐
-              │          │       │        │            │
-         ┌────▼───┐ ┌───▼────┐ ┌▼─────┐ ┌▼──────────┐ │
-         │Customer│ │ Order  │ │Product│ │CustomEvent│ │
-         └────┬───┘ └───┬────┘ └──┬────┘ └───────────┘ │
-              │         │         │                     │
-              └─────────┼─────────┘                     │
-                        │                               │
-                   ┌────▼────┐                         │
-                   │OrderItem│◄────────────────────────┘
-                   └─────────┘
+         
+    User       UserTenant  
+        
+                                
+                                
+                       
+                            Tenant     
+                       
+                                
+              
+                                                   
+             
+         Customer  Order   Product CustomEvent 
+             
+                                                     
+                                   
+                                                       
+                                            
+                   OrderItem
+                   
 ```
 
 ### Key Relationships

@@ -267,43 +267,43 @@ npm run db:seed
 
 ```
 xeno/
-├── app/                      # Next.js app directory
-│   ├── api/                  # API routes
-│   │   ├── auth/            # NextAuth & signup
-│   │   ├── dashboard/       # Analytics endpoints
-│   │   ├── tenants/         # Tenant management
-│   │   └── webhooks/        # Shopify webhooks
-│   ├── auth/                # Auth pages (signin/signup)
-│   ├── dashboard/           # Dashboard page
-│   └── page.tsx             # Home page
-├── components/              # React components
-│   ├── DashboardView.tsx   # Main dashboard with charts
-│   ├── TenantSelector.tsx  # Store dropdown
-│   └── AddTenantModal.tsx  # Add store dialog
-├── lib/                     # Utilities
-│   ├── prisma.ts           # Prisma client
-│   └── shopify-utils.ts    # HMAC verification
-├── prisma/
-│   ├── schema.prisma       # Database schema
-│   └── seed.ts             # Demo data
-├── README.md               # Main documentation
-├── ARCHITECTURE.md         # System design
-├── API_DOCS.md            # API reference
-├── DEPLOYMENT.md          # Deploy guide
-└── DEMO_SCRIPT.md         # Video script
+ app/                      # Next.js app directory
+    api/                  # API routes
+       auth/            # NextAuth & signup
+       dashboard/       # Analytics endpoints
+       tenants/         # Tenant management
+       webhooks/        # Shopify webhooks
+    auth/                # Auth pages (signin/signup)
+    dashboard/           # Dashboard page
+    page.tsx             # Home page
+ components/              # React components
+    DashboardView.tsx   # Main dashboard with charts
+    TenantSelector.tsx  # Store dropdown
+    AddTenantModal.tsx  # Add store dialog
+ lib/                     # Utilities
+    prisma.ts           # Prisma client
+    shopify-utils.ts    # HMAC verification
+ prisma/
+    schema.prisma       # Database schema
+    seed.ts             # Demo data
+ README.md               # Main documentation
+ ARCHITECTURE.md         # System design
+ API_DOCS.md            # API reference
+ DEPLOYMENT.md          # Deploy guide
+ DEMO_SCRIPT.md         # Video script
 ```
 
 ---
 
 ## Next Steps
 
-1. ✅ Run locally and test all features
-2. ✅ Connect real Shopify store and test webhooks
-3. ✅ Deploy to Vercel (see DEPLOYMENT.md)
-4. ✅ Configure production webhooks
-5. ✅ Record demo video (see DEMO_SCRIPT.md)
-6. ✅ Push to GitHub
-7. ✅ Submit assignment
+1. Run locally and test all features
+2. Connect real Shopify store and test webhooks
+3. Deploy to Vercel (see DEPLOYMENT.md)
+4. Configure production webhooks
+5. Record demo video (see DEMO_SCRIPT.md)
+6. Push to GitHub
+7. Submit assignment
 
 ---
 
@@ -325,4 +325,4 @@ Check the documentation files:
 - `DEPLOYMENT.md` - Deploy to production
 - `DEMO_SCRIPT.md` - Record your video
 
-Good luck! 🚀
+Good luck!

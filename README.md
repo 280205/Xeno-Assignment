@@ -2,7 +2,7 @@
 
 A production-ready multi-tenant platform for ingesting Shopify data and providing actionable business insights through an interactive dashboard.
 
-## 🎯 Project Overview
+## Project Overview
 
 This platform enables multiple Shopify stores to:
 - Automatically sync customer, order, product, and event data via webhooks
@@ -10,45 +10,45 @@ This platform enables multiple Shopify stores to:
 - Track customer behavior and purchasing patterns
 - Monitor store performance with interactive charts
 
-## 🏗️ Architecture
+## Architecture
 
 ### High-Level Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                        Shopify Stores                           │
-│  (Multiple Tenants: store1.myshopify.com, store2.myshopify.com)│
-└────────────────────┬────────────────────────────────────────────┘
-                     │ Webhooks (customers, orders, products)
-                     ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                      Next.js Application                        │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │                  API Routes (Webhook Handlers)           │  │
-│  │  /api/webhooks/customers  /api/webhooks/orders           │  │
-│  │  /api/webhooks/products   /api/webhooks/events           │  │
-│  └──────────────────────────────────────────────────────────┘  │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │              Authentication (NextAuth.js)                │  │
-│  │           Email/Password with JWT Sessions               │  │
-│  └──────────────────────────────────────────────────────────┘  │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │                Dashboard API & UI                        │  │
-│  │    - Metrics Aggregation  - Chart Data Generation        │  │
-│  │    - Tenant Isolation     - Date Range Filtering         │  │
-│  └──────────────────────────────────────────────────────────┘  │
-└────────────────────┬────────────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────────────┐
-│              PostgreSQL Database (via Prisma ORM)              │
-│  ┌────────────┬──────────┬──────────┬──────────┬─────────────┐ │
-│  │   Users    │ Tenants  │Customers │ Orders   │  Products   │ │
-│  │            │          │          │          │             │ │
-│  │ UserTenant │          │OrderItems│          │CustomEvents │ │
-│  └────────────┴──────────┴──────────┴──────────┴─────────────┘ │
-│              Multi-Tenant Data Isolation by tenantId           │
-└─────────────────────────────────────────────────────────────────┘
+
+                        Shopify Stores                           
+  (Multiple Tenants: store1.myshopify.com, store2.myshopify.com)
+
+                      Webhooks (customers, orders, products)
+                     
+
+                      Next.js Application                        
+    
+                    API Routes (Webhook Handlers)             
+    /api/webhooks/customers  /api/webhooks/orders             
+    /api/webhooks/products   /api/webhooks/events             
+    
+    
+                Authentication (NextAuth.js)                  
+             Email/Password with JWT Sessions                 
+    
+    
+                  Dashboard API & UI                          
+      - Metrics Aggregation  - Chart Data Generation          
+      - Tenant Isolation     - Date Range Filtering           
+    
+
+                     
+                     
+
+              PostgreSQL Database (via Prisma ORM)              
+   
+     Users     Tenants  Customers  Orders     Products    
+                                                          
+   UserTenant           OrderItems          CustomEvents  
+   
+              Multi-Tenant Data Isolation by tenantId           
+
 ```
 
 ### Technology Stack
@@ -65,7 +65,7 @@ This platform enables multiple Shopify stores to:
 - Chart.js & React-Chartjs-2 - Data visualization
 - TanStack Query - Data fetching
 
-## 📊 Database Schema
+## Database Schema
 
 ### Multi-Tenant Design
 
@@ -104,7 +104,7 @@ model Customer {
 - Cascading deletes maintain referential integrity
 - Separate UserTenant junction table for user-to-tenant relationships
 
-## 🔌 API Endpoints
+## API Endpoints
 
 ### Webhook Endpoints (Public)
 
@@ -139,7 +139,7 @@ These endpoints receive data from Shopify:
 - `startDate` - Filter orders from this date
 - `endDate` - Filter orders until this date
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ### Prerequisites
 
@@ -192,9 +192,9 @@ Visit `http://localhost:3000`
 3. Set webhook format to **JSON**
 4. Note your webhook signing secret and add to `.env`
 
-## 📈 Features Implemented
+## Features Implemented
 
-### ✅ Core Requirements
+### Core Requirements
 
 - [x] Multi-tenant architecture with data isolation
 - [x] Shopify webhook integration (customers, orders, products)
@@ -203,7 +203,7 @@ Visit `http://localhost:3000`
 - [x] Email authentication system
 - [x] Tenant onboarding and management
 
-### ✅ Dashboard Features
+### Dashboard Features
 
 - [x] Total customers, orders, products, revenue metrics
 - [x] Orders by date with date range filtering
@@ -214,7 +214,7 @@ Visit `http://localhost:3000`
 - [x] Average order value calculation
 - [x] Real-time data synchronization
 
-### ✅ Additional Features
+### Additional Features
 
 - [x] Responsive UI with TailwindCSS
 - [x] Protected routes with session management
@@ -223,7 +223,7 @@ Visit `http://localhost:3000`
 - [x] Automatic customer statistics updates
 - [x] Order items tracking with product relationships
 
-## 🔒 Security Features
+## Security Features
 
 1. **HMAC Webhook Verification** - Validates Shopify webhook authenticity
 2. **Password Hashing** - bcrypt with salt rounds
@@ -231,7 +231,7 @@ Visit `http://localhost:3000`
 4. **Tenant Isolation** - Users can only access their authorized tenants
 5. **Environment Variables** - Sensitive data stored securely
 
-## 🌐 Deployment
+## Deployment
 
 ### Vercel Deployment
 
@@ -263,7 +263,7 @@ NEXTAUTH_URL="https://your-app.vercel.app"
 SHOPIFY_WEBHOOK_SECRET="your-webhook-secret"
 ```
 
-## 📝 Assumptions & Trade-offs
+## Assumptions & Trade-offs
 
 ### Assumptions
 
@@ -281,7 +281,7 @@ SHOPIFY_WEBHOOK_SECRET="your-webhook-secret"
 | Webhook-only sync | Real-time, efficient | Misses historical data | For new stores; bulk import would be separate feature |
 | JWT sessions | Stateless, scalable | Can't invalidate easily | Good for multi-region deployment |
 
-## 🔄 Data Flow
+## Data Flow
 
 ### Order Creation Flow
 
@@ -303,7 +303,7 @@ Update Customer Stats (totalSpent, ordersCount)
 Return 200 OK to Shopify
 ```
 
-## 📊 Sample Queries
+## Sample Queries
 
 ### Top Customers Query
 ```typescript
@@ -325,7 +325,7 @@ const orders = await prisma.order.findMany({
 // Aggregate in application layer
 ```
 
-## 🚧 Known Limitations
+## Known Limitations
 
 1. **No Bulk Import**: Currently webhook-only; no historical data import
 2. **No Pagination**: Dashboard loads all data in date range
@@ -333,7 +333,7 @@ const orders = await prisma.order.findMany({
 4. **Single Region DB**: Would need read replicas for global scale
 5. **No Real-time Updates**: Dashboard requires refresh to see new data
 
-## 🔮 Future Enhancements (Production Roadmap)
+## Future Enhancements (Production Roadmap)
 
 ### Phase 1 - Core Improvements
 - [ ] Background jobs for bulk data import (BullMQ + Redis)
@@ -363,7 +363,7 @@ const orders = await prisma.order.findMany({
 - [ ] White-label customization
 - [ ] Data export capabilities
 
-## 🧪 Testing Strategy
+## Testing Strategy
 
 ### Current Testing Approach
 - Manual testing via Shopify development store
@@ -385,39 +385,39 @@ const orders = await prisma.order.findMany({
 - Tenant switching
 ```
 
-## 📚 Documentation Guide
+## Documentation Guide
 
 This project includes comprehensive documentation to help you understand, set up, deploy, and extend the platform:
 
-### 📖 Core Documentation
+### Core Documentation
 - **[README.md](./README.md)** - You are here! Main project overview
 - **[QUICKSTART.md](./QUICKSTART.md)** - Get started in 5 minutes
 - **[NEXT_STEPS.md](./NEXT_STEPS.md)** - Complete your submission (4-5 hours)
 
-### 🏗️ Technical Documentation
+### Technical Documentation
 - **[ARCHITECTURE.md](./ARCHITECTURE.md)** - System design, data models, scalability
 - **[API_DOCS.md](./API_DOCS.md)** - Complete API reference with examples
 - **[STRUCTURE.md](./STRUCTURE.md)** - File structure and navigation
 
-### 🚀 Deployment & Operations
+### Deployment & Operations
 - **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Deploy to Vercel step-by-step
 - **[TROUBLESHOOTING.md](./TROUBLESHOOTING.md)** - Debug common issues
 
-### 🎬 Demo & Testing
+### Demo & Testing
 - **[DEMO_SCRIPT.md](./DEMO_SCRIPT.md)** - Record your demo video (7 min)
 - **[TESTING_GUIDE.md](./TESTING_GUIDE.md)** - Manual testing scenarios
 
-### 📋 Project Management
+### Project Management
 - **[CHECKLIST.md](./CHECKLIST.md)** - Track your progress
 - **[PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md)** - Executive summary
 
-### 📚 External Resources
+### External Resources
 - [Shopify Webhook Documentation](https://shopify.dev/docs/api/admin-rest/latest/resources/webhook)
 - [Prisma Multi-Tenancy Guide](https://www.prisma.io/docs/guides/database/multi-tenancy)
 - [Next.js App Router Docs](https://nextjs.org/docs/app)
 - [NextAuth.js Documentation](https://next-auth.js.org/)
 
-## 🤝 Contributing
+## Contributing
 
 This is an internship assignment project. For production use:
 1. Add comprehensive test coverage
@@ -426,12 +426,12 @@ This is an internship assignment project. For production use:
 4. Set up CI/CD pipeline
 5. Conduct security audit
 
-## 📄 License
+## License
 
 MIT License - This is a demonstration project for the Xeno FDE Internship
 
 ---
 
-**Built with ❤️ for Xeno FDE Internship 2025**
+**Built for Xeno FDE Internship 2025**
 
 For questions or demo requests, please reach out!

@@ -1,15 +1,15 @@
 # Next Steps - Complete Your Submission
 
-## 🎯 What You Have Now
+##  What You Have Now
 
-✅ **Complete codebase** - Production-ready multi-tenant Shopify platform  
-✅ **Comprehensive documentation** - 10 detailed guides  
-✅ **Database schema** - Multi-tenant architecture with Prisma  
-✅ **Authentication system** - NextAuth.js with JWT  
-✅ **Dashboard with charts** - Interactive analytics  
-✅ **Webhook handlers** - Real-time Shopify sync  
+ **Complete codebase** - Production-ready multi-tenant Shopify platform  
+ **Comprehensive documentation** - 10 detailed guides  
+ **Database schema** - Multi-tenant architecture with Prisma  
+ **Authentication system** - NextAuth.js with JWT  
+ **Dashboard with charts** - Interactive analytics  
+ **Webhook handlers** - Real-time Shopify sync  
 
-## 📋 Remaining Tasks (4-5 Hours)
+##  Remaining Tasks (4-5 Hours)
 
 ### Task 1: Set Up Development Environment (30 minutes)
 
@@ -258,13 +258,13 @@ git push -u origin main
 ```markdown
 # Add at the top of README.md:
 
-## 🔗 Quick Links
+##  Quick Links
 
 - **Live Demo:** https://your-app.vercel.app
 - **Demo Video:** https://youtube.com/watch?v=...
 - **GitHub Repo:** https://github.com/yourusername/xeno-shopify-insights
 
-## 🎯 Demo Credentials
+##  Demo Credentials
 
 For quick testing:
 - Email: demo@example.com
@@ -350,12 +350,12 @@ All documentation is in the GitHub repository:
 
 ## Key Highlights
 
-✅ All core requirements met
-✅ Bonus features implemented
-✅ Production-ready code
-✅ Comprehensive documentation
-✅ Deployed and functional
-✅ Security best practices
+ All core requirements met
+ Bonus features implemented
+ Production-ready code
+ Comprehensive documentation
+ Deployed and functional
+ Security best practices
 
 ## Technical Stack
 
@@ -411,22 +411,22 @@ I'm excited about the opportunity to join the Xeno team and contribute to helpin
 
 ---
 
-## 🎯 Time Breakdown
+##  Time Breakdown
 
 | Task | Estimated Time | Status |
 |------|----------------|--------|
-| 1. Dev Environment | 30 min | ⬜ |
-| 2. Shopify Store | 30 min | ⬜ |
-| 3. Vercel Deployment | 45 min | ⬜ |
-| 4. Configure Webhooks | 30 min | ⬜ |
-| 5. Record Video | 2 hours | ⬜ |
-| 6. Final Polish | 1 hour | ⬜ |
-| 7. Submit | 30 min | ⬜ |
+| 1. Dev Environment | 30 min |  |
+| 2. Shopify Store | 30 min |  |
+| 3. Vercel Deployment | 45 min |  |
+| 4. Configure Webhooks | 30 min |  |
+| 5. Record Video | 2 hours |  |
+| 6. Final Polish | 1 hour |  |
+| 7. Submit | 30 min |  |
 | **Total** | **~5.5 hours** | |
 
 ---
 
-## 💡 Pro Tips
+##  Pro Tips
 
 ### Before Recording Video
 - Do a complete dry run
@@ -448,7 +448,7 @@ I'm excited about the opportunity to join the Xeno team and contribute to helpin
 
 ---
 
-## 🚨 Common Pitfalls to Avoid
+##  Common Pitfalls to Avoid
 
 1. **Wrong Webhook URLs:**
    - Must be exact: `/api/webhooks/orders` not `/webhooks/orders`
@@ -473,7 +473,7 @@ I'm excited about the opportunity to join the Xeno team and contribute to helpin
 
 ---
 
-## ✅ Final Verification
+##  Final Verification
 
 Before submitting, verify:
 
@@ -502,7 +502,7 @@ Before submitting, verify:
 
 ---
 
-## 🎉 You're Ready!
+##  You're Ready!
 
 You now have a **production-ready, enterprise-grade application** with:
 - Clean, maintainable code
@@ -516,11 +516,11 @@ This demonstrates:
 - Attention to detail
 - Ownership and hustle
 
-**Good luck with your submission!** 🚀
+**Good luck with your submission!** 
 
 ---
 
-## 📞 Need Help?
+##  Need Help?
 
 If stuck, check:
 1. `TROUBLESHOOTING.md` for common issues
@@ -532,4 +532,4 @@ If stuck, check:
 
 **Remember:** The goal is to show your problem-solving ability, not perfection. If you hit issues, document your approach to solving them!
 
-You've got this! 💪
+You've got this! 

@@ -1,6 +1,6 @@
 # Test Data & Manual Testing Guide
 
-## 🎯 Quick Test Scenarios
+## Quick Test Scenarios
 
 This guide helps you manually test all features before recording your demo.
 
@@ -533,16 +533,16 @@ Before recording video:
 ## During Demo
 
 **What to Show:**
-1. ✅ Clean landing page
-2. ✅ Quick sign in (don't show password typing)
-3. ✅ Tenant selection
-4. ✅ Metrics overview
-5. ✅ Each chart type
-6. ✅ Date filtering in action
-7. ✅ Top customers list
-8. ✅ Switch to code view (briefly)
-9. ✅ Webhook handler code
-10. ✅ Database schema
+1. Clean landing page
+2. Quick sign in (don't show password typing)
+3. Tenant selection
+4. Metrics overview
+5. Each chart type
+6. Date filtering in action
+7. Top customers list
+8. Switch to code view (briefly)
+9. Webhook handler code
+10. Database schema
 
 **What to Avoid:**
 - Don't get stuck on errors
@@ -570,4 +570,4 @@ Before submitting, verify:
 
 ---
 
-**You're ready to test!** Run through each scenario and fix any issues before recording your demo. 🧪✅
+**You're ready to test!** Run through each scenario and fix any issues before recording your demo.

@@ -2,82 +2,82 @@
 
 ```
 xeno/
-│
-├── 📄 Configuration Files
-│   ├── .env.example                 # Environment variables template
-│   ├── .gitignore                   # Git ignore rules
-│   ├── next.config.js               # Next.js configuration
-│   ├── package.json                 # Dependencies and scripts
-│   ├── postcss.config.js            # PostCSS configuration
-│   ├── tailwind.config.ts           # TailwindCSS configuration
-│   ├── tsconfig.json                # TypeScript configuration
-│   └── vercel.json                  # Vercel deployment config
-│
-├── 📚 Documentation
-│   ├── README.md                    # Main project documentation
-│   ├── ARCHITECTURE.md              # System architecture & design
-│   ├── API_DOCS.md                  # API endpoint reference
-│   ├── DEPLOYMENT.md                # Deployment guide
-│   ├── QUICKSTART.md                # 5-minute setup guide
-│   ├── TROUBLESHOOTING.md           # Debug & problem solving
-│   ├── DEMO_SCRIPT.md               # Video recording script
-│   ├── CHECKLIST.md                 # Completion tracker
-│   └── PROJECT_SUMMARY.md           # Executive summary
-│
-├── 🎨 Frontend (app/)
-│   ├── layout.tsx                   # Root layout with providers
-│   ├── page.tsx                     # Landing page
-│   ├── providers.tsx                # React Query & NextAuth providers
-│   ├── globals.css                  # Global styles
-│   │
-│   ├── auth/                        # Authentication pages
-│   │   ├── signin/
-│   │   │   └── page.tsx            # Sign in page
-│   │   └── signup/
-│   │       └── page.tsx            # Sign up page
-│   │
-│   ├── dashboard/                   # Dashboard pages
-│   │   └── page.tsx                # Main dashboard with charts
-│   │
-│   └── api/                         # API Routes (Backend)
-│       ├── auth/
-│       │   ├── [...nextauth]/
-│       │   │   └── route.ts        # NextAuth configuration
-│       │   └── signup/
-│       │       └── route.ts        # User registration endpoint
-│       │
-│       ├── tenants/
-│       │   └── route.ts            # Tenant management (GET/POST)
-│       │
-│       ├── dashboard/
-│       │   └── [tenantId]/
-│       │       └── route.ts        # Dashboard analytics data
-│       │
-│       └── webhooks/                # Shopify webhook handlers
-│           ├── customers/
-│           │   └── route.ts        # Customer sync webhook
-│           ├── orders/
-│           │   └── route.ts        # Order sync webhook
-│           ├── products/
-│           │   └── route.ts        # Product sync webhook
-│           └── events/
-│               └── route.ts        # Custom events webhook
-│
-├── 🧩 Components (components/)
-│   ├── DashboardView.tsx            # Main dashboard with charts
-│   ├── TenantSelector.tsx           # Store dropdown selector
-│   └── AddTenantModal.tsx           # Add store modal dialog
-│
-├── 🛠️ Utilities (lib/)
-│   ├── prisma.ts                    # Prisma client singleton
-│   └── shopify-utils.ts             # HMAC verification utilities
-│
-├── 💾 Database (prisma/)
-│   ├── schema.prisma                # Database schema definition
-│   └── seed.ts                      # Demo data seeding script
-│
-└── 📝 Types (types/)
-    └── next-auth.d.ts               # NextAuth TypeScript types
+
+  Configuration Files
+    .env.example                 # Environment variables template
+    .gitignore                   # Git ignore rules
+    next.config.js               # Next.js configuration
+    package.json                 # Dependencies and scripts
+    postcss.config.js            # PostCSS configuration
+    tailwind.config.ts           # TailwindCSS configuration
+    tsconfig.json                # TypeScript configuration
+    vercel.json                  # Vercel deployment config
+
+  Documentation
+    README.md                    # Main project documentation
+    ARCHITECTURE.md              # System architecture & design
+    API_DOCS.md                  # API endpoint reference
+    DEPLOYMENT.md                # Deployment guide
+    QUICKSTART.md                # 5-minute setup guide
+    TROUBLESHOOTING.md           # Debug & problem solving
+    DEMO_SCRIPT.md               # Video recording script
+    CHECKLIST.md                 # Completion tracker
+    PROJECT_SUMMARY.md           # Executive summary
+
+  Frontend (app/)
+    layout.tsx                   # Root layout with providers
+    page.tsx                     # Landing page
+    providers.tsx                # React Query & NextAuth providers
+    globals.css                  # Global styles
+   
+    auth/                        # Authentication pages
+       signin/
+          page.tsx            # Sign in page
+       signup/
+           page.tsx            # Sign up page
+   
+    dashboard/                   # Dashboard pages
+       page.tsx                # Main dashboard with charts
+   
+    api/                         # API Routes (Backend)
+        auth/
+           [...nextauth]/
+              route.ts        # NextAuth configuration
+           signup/
+               route.ts        # User registration endpoint
+       
+        tenants/
+           route.ts            # Tenant management (GET/POST)
+       
+        dashboard/
+           [tenantId]/
+               route.ts        # Dashboard analytics data
+       
+        webhooks/                # Shopify webhook handlers
+            customers/
+               route.ts        # Customer sync webhook
+            orders/
+               route.ts        # Order sync webhook
+            products/
+               route.ts        # Product sync webhook
+            events/
+                route.ts        # Custom events webhook
+
+  Components (components/)
+    DashboardView.tsx            # Main dashboard with charts
+    TenantSelector.tsx           # Store dropdown selector
+    AddTenantModal.tsx           # Add store modal dialog
+
+  Utilities (lib/)
+    prisma.ts                    # Prisma client singleton
+    shopify-utils.ts             # HMAC verification utilities
+
+  Database (prisma/)
+    schema.prisma                # Database schema definition
+    seed.ts                      # Demo data seeding script
+
+  Types (types/)
+     next-auth.d.ts               # NextAuth TypeScript types
 
 ```
 
@@ -87,13 +87,13 @@ xeno/
 
 | File | Purpose | Required? |
 |------|---------|-----------|
-| `.env.example` | Template for environment variables | ✅ |
-| `.gitignore` | Files to exclude from Git | ✅ |
-| `next.config.js` | Next.js framework settings | ✅ |
-| `package.json` | Project dependencies & scripts | ✅ |
-| `postcss.config.js` | CSS processing configuration | ✅ |
-| `tailwind.config.ts` | TailwindCSS theme & settings | ✅ |
-| `tsconfig.json` | TypeScript compiler options | ✅ |
+| `.env.example` | Template for environment variables |  |
+| `.gitignore` | Files to exclude from Git |  |
+| `next.config.js` | Next.js framework settings |  |
+| `package.json` | Project dependencies & scripts |  |
+| `postcss.config.js` | CSS processing configuration |  |
+| `tailwind.config.ts` | TailwindCSS theme & settings |  |
+| `tsconfig.json` | TypeScript compiler options |  |
 | `vercel.json` | Vercel deployment settings | Optional |
 
 ### Documentation Files
@@ -117,7 +117,7 @@ xeno/
 ```
 Landing Page (/)
     ↓
-Sign Up (/auth/signup) ──→ Sign In (/auth/signin)
+Sign Up (/auth/signup) → Sign In (/auth/signin)
                                 ↓
                           Dashboard (/dashboard)
                                 ↓
@@ -146,14 +146,14 @@ Sign Up (/auth/signup) ──→ Sign In (/auth/signin)
 ### Database Schema
 
 ```sql
-User ──┐
-       ├─→ UserTenant ←─┐
-       │                │
-       └────────────────┘
+User 
+       → UserTenant ←
+                       
+       
                         ↓
-                    Tenant ─┬→ Customer ──→ Order ──→ OrderItem
-                            ├→ Product
-                            └→ CustomEvent
+                    Tenant → Customer → Order → OrderItem
+                            → Product
+                            → CustomEvent
 ```
 
 **8 Tables:**
@@ -263,19 +263,19 @@ SHOPIFY_WEBHOOK_SECRET # Webhook verification
 After `npm run build`:
 ```
 .next/                # Next.js build output
-  ├── server/        # Server-side code
-  ├── static/        # Static assets
-  └── cache/         # Build cache
+   server/        # Server-side code
+   static/        # Static assets
+   cache/         # Build cache
 ```
 
 ## Deployment Artifacts
 
 ```
 Vercel Deployment:
-  ├── Serverless Functions (API routes)
-  ├── Static Assets (CSS, JS)
-  ├── Edge Runtime (Middleware)
-  └── Environment Variables
+   Serverless Functions (API routes)
+   Static Assets (CSS, JS)
+   Edge Runtime (Middleware)
+   Environment Variables
 ```
 
 ## File Size Estimates
@@ -333,15 +333,15 @@ Vercel Deployment:
 
 ## Quick Navigation
 
-- 📖 **Getting Started:** See `QUICKSTART.md`
-- 🏗️ **Architecture:** See `ARCHITECTURE.md`
-- 📡 **API Docs:** See `API_DOCS.md`
-- 🚀 **Deploy:** See `DEPLOYMENT.md`
-- 🐛 **Troubleshoot:** See `TROUBLESHOOTING.md`
-- 🎬 **Demo Video:** See `DEMO_SCRIPT.md`
-- ✅ **Checklist:** See `CHECKLIST.md`
-- 📊 **Summary:** See `PROJECT_SUMMARY.md`
+-  **Getting Started:** See `QUICKSTART.md`
+-  **Architecture:** See `ARCHITECTURE.md`
+-  **API Docs:** See `API_DOCS.md`
+-  **Deploy:** See `DEPLOYMENT.md`
+-  **Troubleshoot:** See `TROUBLESHOOTING.md`
+-  **Demo Video:** See `DEMO_SCRIPT.md`
+-  **Checklist:** See `CHECKLIST.md`
+-  **Summary:** See `PROJECT_SUMMARY.md`
 
 ---
 
-**This is a production-ready, well-documented, enterprise-grade application.** 🚀
+**This is a production-ready, well-documented, enterprise-grade application.** 
