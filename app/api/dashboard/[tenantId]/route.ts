@@ -37,10 +37,16 @@ export async function GET(
 
     const dateFilter: any = {}
     if (startDate) {
-      dateFilter.gte = new Date(startDate)
+      // Use start of day for the startDate to include the whole day
+      const start = new Date(startDate)
+      start.setHours(0, 0, 0, 0)
+      dateFilter.gte = start
     }
     if (endDate) {
-      dateFilter.lte = new Date(endDate)
+      // Use end of day for the endDate to include the whole day
+      const end = new Date(endDate)
+      end.setHours(23, 59, 59, 999)
+      dateFilter.lte = end
     }
 
     // Get metrics
