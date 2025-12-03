@@ -1,7 +1,15 @@
 import { prisma } from '@/lib/prisma'
 import { NextResponse } from 'next/server'
 
+export async function GET() {
+  return handleFixTenant()
+}
+
 export async function POST() {
+  return handleFixTenant()
+}
+
+async function handleFixTenant() {
   try {
     // Find demo user
     const demoUser = await prisma.user.findUnique({
