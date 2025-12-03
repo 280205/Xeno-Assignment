@@ -56,8 +56,7 @@ async function handleSyncProducts() {
               tenantId: tenant.id,
               shopifyProductId,
               title: item.title,
-              price: item.price,
-              status: 'active'
+              price: item.price
             }
           })
           productsCreated.push(product.title)
