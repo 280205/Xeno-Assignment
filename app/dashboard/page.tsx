@@ -1,3 +1,4 @@
+
 'use client'
 
 import { useSession } from 'next-auth/react'
@@ -7,6 +8,7 @@ import { signOut } from 'next-auth/react'
 import DashboardView from '@/components/DashboardView'
 import TenantSelector from '@/components/TenantSelector'
 import AddTenantModal from '@/components/AddTenantModal'
+import Image from 'next/image'
 
 export default function Dashboard() {
   const { data: session, status } = useSession()
@@ -39,8 +41,15 @@ export default function Dashboard() {
           <div className="flex justify-between h-20 items-center">
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">X</span>
+                <div className="w-10 h-10 relative">
+                  <Image
+                    src="/xeno-logo.png"
+                    alt="Xeno logo"
+                    sizes="40px"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
                 </div>
                 <h1 className="text-2xl font-bold text-slate-900">Xeno Insights</h1>
               </div>
