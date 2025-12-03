@@ -197,13 +197,13 @@ export default function DashboardView({ tenantId }: DashboardViewProps) {
         <div className="bg-white p-6 rounded-lg shadow">
           <h3 className="text-sm text-gray-600 mb-2">Total Revenue</h3>
           <p className="text-3xl font-bold text-yellow-600">
-            ${data.overview.totalRevenue.toFixed(2)}
+            ₹{data.overview.totalRevenue.toFixed(2)}
           </p>
         </div>
         <div className="bg-white p-6 rounded-lg shadow">
           <h3 className="text-sm text-gray-600 mb-2">Avg Order Value</h3>
           <p className="text-3xl font-bold text-red-600">
-            ${data.overview.averageOrderValue.toFixed(2)}
+            ₹{data.overview.averageOrderValue.toFixed(2)}
           </p>
         </div>
       </div>
@@ -244,7 +244,7 @@ export default function DashboardView({ tenantId }: DashboardViewProps) {
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className="font-bold text-green-600">${customer.totalSpent.toFixed(2)}</p>
+                  <p className="font-bold text-green-600">₹{customer.totalSpent.toFixed(2)}</p>
                   <p className="text-sm text-gray-600">{customer.ordersCount} orders</p>
                 </div>
               </div>
